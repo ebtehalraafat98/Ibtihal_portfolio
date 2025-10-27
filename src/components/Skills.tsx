@@ -143,20 +143,20 @@ export default function Skills() {
             })}
           </div>
 
-          <div className="bg-slate-900 p-8 rounded-lg border border-slate-700 mb-8">
-            <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">
+          <div className="bg-slate-900 p-4 md:p-8 rounded-lg border border-slate-700 mb-8">
+            <h3 className="text-xl md:text-2xl font-bold text-cyan-400 mb-4 md:mb-6 text-center">
               Core Behavioral Skills
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
               {softSkills.map((skill, index) => {
                 const SkillIcon = skill.icon;
                 return (
                   <div
                     key={index}
-                    className="flex items-center gap-3 px-6 py-4 bg-cyan-400/10 border border-cyan-400/30 rounded-lg text-white hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 cursor-default group"
+                    className="flex items-center gap-2 md:gap-3 px-3 md:px-6 py-3 md:py-4 bg-cyan-400/10 border border-cyan-400/30 rounded-lg text-white hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 cursor-default group"
                   >
-                    <SkillIcon size={20} className="group-hover:scale-110 transition-transform" />
-                    <span className="font-medium">{skill.name}</span>
+                    <SkillIcon size={18} className="md:w-5 md:h-5 group-hover:scale-110 transition-transform flex-shrink-0" />
+                    <span className="font-medium text-xs md:text-base">{skill.name}</span>
                   </div>
                 );
               })}
