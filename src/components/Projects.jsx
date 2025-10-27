@@ -276,7 +276,7 @@ export default function Projects() {
       category: 'Full-Stack Development',
       videos: [furnitureVideo],
       github: 'https://github.com/ebtehalraafat98/furniture-website',
-      demo: 'https://ebtehalraafat98.github.io/furniture-website',
+      demo: 'https://cheery-raindrop-120ea3.netlify.app/',
     },
     {
       title: 'Simple Examinations System',
@@ -377,7 +377,7 @@ export default function Projects() {
       ],
       technologies: ['Python', 'Stable Diffusion', 'HuggingFace Transformers', 'MLflow', 'Generative AI', 'Deep Learning'],
       category: 'AI & Machine Learning',
-      demo: 'https://colab.research.google.com/drive/1Z5ZqYQQ9Z5ZqYQQ9Z5ZqYQQ9Z5ZqYQQ9',
+      demo: 'https://colab.research.google.com/drive/17G6hox3a1e3K7GVl8k8ANMNvlXbwvpqf?usp=sharing',
     },
     {
       title: 'AI to Fabrication: Designing for Maat',
