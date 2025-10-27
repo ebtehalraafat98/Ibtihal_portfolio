@@ -1,8 +1,41 @@
-import { X, Github, ExternalLink, Play } from 'lucide-react';
+import { X, Github, ExternalLink, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 import styles from './ProjectModal.module.css';
 
 export default function ProjectModal({ project, isOpen, onClose }) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   if (!isOpen) return null;
+
+  const openLightbox = (index) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    if (project.images) {
+      setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (project.images) {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? project.images.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'Escape') closeLightbox();
+  };
 
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
@@ -29,6 +62,8 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                     src={image}
                     alt={`${project.title} - ${idx + 1}`}
                     className={styles.projectImage}
+                    onClick={() => openLightbox(idx)}
+                    style={{ cursor: 'pointer' }}
                   />
                 ))}
               </div>
@@ -55,7 +90,17 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           {/* Project Description */}
           <div className={styles.descriptionSection}>
             <h3 className={styles.sectionTitle}>About This Project</h3>
-            <p className={styles.modalDescription}>{project.description}</p>
+            {project.fullDescription && project.fullDescription.length > 0 ? (
+              <div className={styles.modalDescription}>
+                {project.fullDescription.map((paragraph, idx) => (
+                  <p key={idx} style={{ marginBottom: '1rem' }}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <p className={styles.modalDescription}>{project.description}</p>
+            )}
           </div>
 
           {/* Technologies */}
@@ -108,6 +153,45 @@ export default function ProjectModal({ project, isOpen, onClose }) {
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      {lightboxOpen && project.images && (
+        <div 
+          className={styles.lightboxOverlay} 
+          onClick={closeLightbox}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+        >
+          <button className={styles.lightboxClose} onClick={closeLightbox}>
+            <X size={32} />
+          </button>
+          
+          <button 
+            className={`${styles.lightboxNav} ${styles.lightboxPrev}`} 
+            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+          >
+            <ChevronLeft size={40} />
+          </button>
+
+          <img
+            src={project.images[currentImageIndex]}
+            alt={`${project.title} - ${currentImageIndex + 1}`}
+            className={styles.lightboxImage}
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <button 
+            className={`${styles.lightboxNav} ${styles.lightboxNext}`} 
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+          >
+            <ChevronRight size={40} />
+          </button>
+
+          <div className={styles.lightboxCounter}>
+            {currentImageIndex + 1} / {project.images.length}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

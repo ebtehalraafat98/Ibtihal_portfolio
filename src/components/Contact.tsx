@@ -9,9 +9,49 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitMessage('');
+    
+    // Create a well-formatted email body
+    const emailBody = `Hello Ibtihal,
+
+You have received a new message from your portfolio website.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CONTACT DETAILS:
+Name: ${formData.name}
+Email: ${formData.email}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MESSAGE:
+${formData.message}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Best regards,
+Portfolio Contact Form`;
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:ebtehal.mohamed.raafat.abdelfatah@gmail.com?subject=${encodeURIComponent(
+      `Portfolio Contact: ${formData.subject}`
+    )}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    setSubmitMessage('✓ Opening your email client to send the message...');
+    setTimeout(() => {
+      setSubmitMessage('');
+      setIsSubmitting(false);
+    }, 3000);
   };
 
   const handleChange = (
@@ -189,12 +229,27 @@ export default function Contact() {
                   />
                 </div>
 
+                {submitMessage && (
+                  <div className={`p-4 rounded-lg border ${
+                    submitMessage.includes('✓') 
+                      ? 'bg-green-400/10 border-green-400/30' 
+                      : 'bg-red-400/10 border-red-400/30'
+                  }`}>
+                    <p className={`text-sm sm:text-base text-center ${
+                      submitMessage.includes('✓') ? 'text-green-400' : 'text-red-400'
+                    }`}>
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-cyan-400 text-slate-900 font-semibold rounded-lg hover:bg-cyan-300 transition-all duration-300 shadow-lg hover:shadow-cyan-400/50 flex items-center justify-center gap-2 text-sm sm:text-base"
+                  disabled={isSubmitting}
+                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-cyan-400 text-slate-900 font-semibold rounded-lg hover:bg-cyan-300 transition-all duration-300 shadow-lg hover:shadow-cyan-400/50 flex items-center justify-center gap-2 text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={18} className="sm:w-5 sm:h-5" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

@@ -219,7 +219,7 @@
 
 .scrollButton {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -227,6 +227,10 @@
   border: none;
   cursor: pointer;
   animation: bounce 2s infinite;
+}
+
+.scrollButton:hover {
+  color: #22d3ee;
 }
 
 @keyframes bounce {
