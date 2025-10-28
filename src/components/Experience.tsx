@@ -4,17 +4,16 @@ export default function Experience() {
   const experiences = [
     {
       title: 'BIM Developer',
-      company: 'Fabber',
-      location: 'Texas, USA',
+      company: 'Technology Company',
+      location: 'USA',
       period: 'Jan 2025 – Aug 2025',
       type: 'Part-time',
       responsibilities: [
-        'Developed core spool automation features within Revit including assign, modify, and reset functionalities',
-        'Enabled dynamic scheduling and documentation generation for spools workflows',
-        'Collaborated with cross-functional teams to align tooling with construction standards',
-        'Contributed to parameter structuring and view generation logic for modular fabrication',
+        'Developed Revit plugins for automated assembly management and documentation',
+        'Implemented dynamic sheet creation and view generation workflows',
+        'Built parameter assignment systems for improved data structuring',
+        'Collaborated with cross-functional teams on construction technology solutions',
       ],
-      keyProject: 'Fabber Fabrication Modules for Tesla',
     },
     {
       title: 'BIM Specialist & BIM Developer',
@@ -115,7 +114,7 @@ export default function Experience() {
                     ))}
                   </ul>
 
-                  {exp.keyProject && (
+                  {/* {exp.keyProject && (
                     <div className="mt-4 pt-4 border-t border-slate-700">
                       <p className="text-sm text-gray-400">
                         <span className="text-cyan-400 font-semibold">
@@ -124,7 +123,7 @@ export default function Experience() {
                         {exp.keyProject}
                       </p>
                     </div>
-                  )}
+                  )} */}
 
                   {exp.keyProjects && (
                     <div className="mt-4 pt-4 border-t border-slate-700">

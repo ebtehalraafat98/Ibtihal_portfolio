@@ -86,6 +86,120 @@ import modernResidentialImg3 from '../assets/projects/BIM Specialist/Modern Resi
 
 export default function Projects() {
   const projects = [
+    // Full-Stack Development Projects
+    {
+      title: 'Personal Portfolio Website',
+      company: 'Personal Project',
+      description:
+        'Modern, responsive portfolio website showcasing my journey as an AEC Software Engineer with interactive project galleries and smooth animations.',
+      fullDescription: [
+        'Built a comprehensive portfolio website from scratch using React, TypeScript, and modern web technologies to showcase my professional work and technical skills.',
+        'Key Features:',
+        '• Responsive design optimized for all devices (mobile, tablet, desktop)',
+        '• Interactive project gallery with lightbox image viewer',
+        '• Dynamic "Show More" functionality with fade effects',
+        '• Smooth scrolling navigation and section transitions',
+        '• Contact form with email integration',
+        '• Optimized performance and loading times',
+        '• Clean, modern UI with custom animations',
+        'This portfolio represents my ability to build polished, user-friendly web applications with attention to detail and modern design principles.'
+      ],
+      technologies: ['React', 'JavaScript', 'Vite', 'CSS Modules', 'Lucide Icons', 'GitHub Pages'],
+      category: 'Full-Stack Development',
+      github: 'https://github.com/ebtehalraafat98/Ibtihal_portfolio',
+      demo: 'https://ebtehalraafat98.github.io/Ibtihal_portfolio/',
+    },
+    {
+      title: 'Furniture E-Commerce Website',
+      company: 'ITI Full Stack Track',
+      description:
+        'Fully functional furniture website combining clean design, dynamic data, and smooth user experience with cart functionality.',
+      fullDescription: [
+        'As part of my React course, I built a fully functional furniture website that combines clean design, dynamic data, and smooth user experience. This project helped me apply key frontend concepts and sharpen my skills in building scalable, component-based interfaces.',
+        'Key Features:',
+        '• Dynamic product cards with Add to Cart functionality',
+        '• Product details page with routing and styled layout',
+        '• Cart page with quantity control and total calculation',
+        '• Responsive design across devices',
+        '• Clean code structure and modular architecture',
+        'This project reflects my growth as a frontend engineer and my passion for building intuitive, user-friendly interfaces.'
+      ],
+      technologies: ['React.js', 'Redux Toolkit', 'React Router', 'Bootstrap', 'Vite', 'JSON Server', 'CSS Modules', 'JavaScript ES6+'],
+      category: 'Full-Stack Development',
+      videos: [furnitureVideo],
+      github: 'https://github.com/ebtehalraafat98/furniture-website',
+      demo: 'https://cheery-raindrop-120ea3.netlify.app/',
+    },
+    {
+      title: 'Simple Examinations System',
+      company: 'ITI Full Stack Track',
+      description:
+        'Web-based examination system with randomized image-based questions, timer, and visual score results.',
+      fullDescription: [
+        'This project is a web-based examination system built using HTML, CSS, and JavaScript. It displays randomized image-based questions, tracks user responses, and calculates the final score with a visual result interface.',
+        'Key Features:',
+        '• Questions stored as array of objects with image-based answers',
+        '• CSS popup for student name entry using SweetAlert',
+        '• 1-minute timer bar with auto-submit functionality',
+        '• Single question display with Next button navigation',
+        '• 3-5 image-based answers per question with gray highlight on selection',
+        '• Randomized questions and answers on each exam run',
+        '• Circular progress bar showing final score percentage',
+        '• Clean CSS styling for responsive design'
+      ],
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'SweetAlert'],
+      category: 'Full-Stack Development',
+      github: 'https://github.com/ebtehalraafat98/-examination-system-js',
+      demo: 'https://ebtehalraafat98.github.io/-examination-system-js/',
+    },
+    {
+      title: 'Electronic Examination & Evaluation System (ZU_EES)',
+      company: 'ITI Full Stack Track',
+      description:
+        'Comprehensive electronic system for managing examinations and evaluation processes at Zagazig University.',
+      fullDescription: [
+        'This project is a comprehensive electronic system designed to manage examinations and evaluation processes at Zagazig University (ZU). The system aims to transform traditional assessment and review processes into an efficient and accurate digital platform.',
+        'System Core Objectives:',
+        '• User Management: Support permissions for students, professors, and department heads',
+        '• Question Bank: Centralized question repository for exam development',
+        '• Exam Management: Link exams to courses with marks and passing scores',
+        '• Automatic Result Calculation: Record answers and calculate scores automatically',
+        '• Evaluation System: Enable students to evaluate courses and professors',
+        'Technical Structure:',
+        '• Database: PostgreSQL with normalized tables (near 3NF)',
+        '• Strong relationships using 1:M and M:M with associative entities',
+        '• Ternary logic in Answer entity (Student, Exam, Question)',
+        '• SQL queries for results, evaluations, and top performers'
+      ],
+      technologies: ['PostgreSQL', 'SQL', 'Database Design', 'ERD', 'Normalization'],
+      category: 'Full-Stack Development',
+      github: 'https://github.com/ebtehalraafat98/Electronic-Examination-and-Evaluation-System-Project-Summary-with-PG',
+    },
+    {
+      title: 'Database Management with Bash',
+      company: 'ITI Full Stack Track',
+      description:
+        'Command-line database management system built entirely with Bash scripting for creating, managing, and querying databases.',
+      fullDescription: [
+        'A comprehensive database management system (DBMS) built entirely using Bash scripting. This project demonstrates advanced shell scripting techniques to create a functional database system that runs directly from the command line.',
+        'Key Features:',
+        '• Create and manage multiple databases',
+        '• Create tables with defined schemas',
+        '• Insert, update, and delete records',
+        '• Query data with filtering and sorting',
+        '• Data persistence using file system',
+        '• Interactive command-line interface',
+        'This project showcases proficiency in Bash scripting, file handling, and building complex CLI applications.'
+      ],
+      technologies: ['Bash', 'Shell Scripting', 'Linux', 'CLI', 'File Systems'],
+      category: 'Full-Stack Development',
+      videos: [bashVideo],
+      github: 'https://github.com/ebtehalraafat98/Bash_project',
+      demo: 'https://engzuedu-my.sharepoint.com/:v:/g/personal/emrafat_eng_zu_edu_eg/Ec1jSYkD46pDj7yaVaY1ZbkBW-kw1HL54oiAlJ2Uhgq-Dg?e=C0SS26',
+    },
+
+    // BIM Automation Projects
+    /* COMMENTED OUT - Confidential Client Project
     {
       title: 'Fabber Assign Spool Module',
       company: 'Fabber',
@@ -100,6 +214,7 @@ export default function Projects() {
       technologies: ['Revit API', 'C#', 'Figma Design', 'WPF', 'MVVM'],
       category: 'BIM Automation',
     },
+    */
     {
       title: 'PSB Params Plugin',
       company: 'Personal Project',
@@ -257,94 +372,8 @@ export default function Projects() {
       category: 'BIM Specialist',
       images: [modernResidentialImg1, modernResidentialImg2, modernResidentialImg3],
     },
-    {
-      title: 'Furniture E-Commerce Website',
-      company: 'ITI Full Stack Track',
-      description:
-        'Fully functional furniture website combining clean design, dynamic data, and smooth user experience with cart functionality.',
-      fullDescription: [
-        'As part of my React course, I built a fully functional furniture website that combines clean design, dynamic data, and smooth user experience. This project helped me apply key frontend concepts and sharpen my skills in building scalable, component-based interfaces.',
-        'Key Features:',
-        '• Dynamic product cards with Add to Cart functionality',
-        '• Product details page with routing and styled layout',
-        '• Cart page with quantity control and total calculation',
-        '• Responsive design across devices',
-        '• Clean code structure and modular architecture',
-        'This project reflects my growth as a frontend engineer and my passion for building intuitive, user-friendly interfaces.'
-      ],
-      technologies: ['React.js', 'Redux Toolkit', 'React Router', 'Bootstrap', 'Vite', 'JSON Server', 'CSS Modules', 'JavaScript ES6+'],
-      category: 'Full-Stack Development',
-      videos: [furnitureVideo],
-      github: 'https://github.com/ebtehalraafat98/furniture-website',
-      demo: 'https://cheery-raindrop-120ea3.netlify.app/',
-    },
-    {
-      title: 'Simple Examinations System',
-      company: 'ITI Full Stack Track',
-      description:
-        'Web-based examination system with randomized image-based questions, timer, and visual score results.',
-      fullDescription: [
-        'This project is a web-based examination system built using HTML, CSS, and JavaScript. It displays randomized image-based questions, tracks user responses, and calculates the final score with a visual result interface.',
-        'Key Features:',
-        '• Questions stored as array of objects with image-based answers',
-        '• CSS popup for student name entry using SweetAlert',
-        '• 1-minute timer bar with auto-submit functionality',
-        '• Single question display with Next button navigation',
-        '• 3-5 image-based answers per question with gray highlight on selection',
-        '• Randomized questions and answers on each exam run',
-        '• Circular progress bar showing final score percentage',
-        '• Clean CSS styling for responsive design'
-      ],
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'SweetAlert'],
-      category: 'Full-Stack Development',
-      github: 'https://github.com/ebtehalraafat98/-examination-system-js',
-      demo: 'https://ebtehalraafat98.github.io/-examination-system-js/',
-    },
-    {
-      title: 'Electronic Examination & Evaluation System (ZU_EES)',
-      company: 'ITI Full Stack Track',
-      description:
-        'Comprehensive electronic system for managing examinations and evaluation processes at Zagazig University.',
-      fullDescription: [
-        'This project is a comprehensive electronic system designed to manage examinations and evaluation processes at Zagazig University (ZU). The system aims to transform traditional assessment and review processes into an efficient and accurate digital platform.',
-        'System Core Objectives:',
-        '• User Management: Support permissions for students, professors, and department heads',
-        '• Question Bank: Centralized question repository for exam development',
-        '• Exam Management: Link exams to courses with marks and passing scores',
-        '• Automatic Result Calculation: Record answers and calculate scores automatically',
-        '• Evaluation System: Enable students to evaluate courses and professors',
-        'Technical Structure:',
-        '• Database: PostgreSQL with normalized tables (near 3NF)',
-        '• Strong relationships using 1:M and M:M with associative entities',
-        '• Ternary logic in Answer entity (Student, Exam, Question)',
-        '• SQL queries for results, evaluations, and top performers'
-      ],
-      technologies: ['PostgreSQL', 'SQL', 'Database Design', 'ERD', 'Normalization'],
-      category: 'Full-Stack Development',
-      github: 'https://github.com/ebtehalraafat98/Electronic-Examination-and-Evaluation-System-Project-Summary-with-PG',
-    },
-    {
-      title: 'Database Management with Bash',
-      company: 'ITI Full Stack Track',
-      description:
-        'Command-line database management system built entirely with Bash scripting for creating, managing, and querying databases.',
-      fullDescription: [
-        'A comprehensive database management system (DBMS) built entirely using Bash scripting. This project demonstrates advanced shell scripting techniques to create a functional database system that runs directly from the command line.',
-        'Key Features:',
-        '• Create and manage multiple databases',
-        '• Create tables with defined schemas',
-        '• Insert, update, and delete records',
-        '• Query data with filtering and sorting',
-        '• Data persistence using file system',
-        '• Interactive command-line interface',
-        'This project showcases proficiency in Bash scripting, file handling, and building complex CLI applications.'
-      ],
-      technologies: ['Bash', 'Shell Scripting', 'Linux', 'CLI', 'File Systems'],
-      category: 'Full-Stack Development',
-      videos: [bashVideo],
-      github: 'https://github.com/ebtehalraafat98/Bash_project',
-      demo: 'https://engzuedu-my.sharepoint.com/:v:/g/personal/emrafat_eng_zu_edu_eg/Ec1jSYkD46pDj7yaVaY1ZbkBW-kw1HL54oiAlJ2Uhgq-Dg?e=C0SS26',
-    },
+
+    // AI & Machine Learning Projects
     {
       title: 'TXT2TXT - SafeTensor MLflow Model Logger',
       company: 'DEPI Generative AI Track',
@@ -431,9 +460,9 @@ export default function Projects() {
 
   const categories = [
     'All Projects',
+    'Full-Stack Development',
     'BIM Automation',
     'BIM Specialist',
-    'Full-Stack Development',
     'AI & Machine Learning',
     'Computational Engineering',
   ];

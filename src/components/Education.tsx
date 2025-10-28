@@ -51,10 +51,11 @@ export default function Education() {
       period: 'Jul 2023 - Oct 2023',
       location: 'Smart Village Branch, Egypt',
       modules: [
-        'Revit API & AutoCAD API development with C#',
-        'IFC integration and data exchange',
-        'Windows Presentation Foundation (WPF)',
-        'BIM workflow automation',
+        'Software Development Fundamentals: Programming with C# & .NET, OOP, Data Structures & Algorithms',
+        'Desktop Application Development: WPF with C# & .NET',
+        'Database Fundamentals',
+        'BIM Development Studio: IFC & XBIM Toolkit, Dynamo Visual Programming for Revit',
+        'Autodesk Revit API & AutoCAD API development',
       ],
     },
   ];
